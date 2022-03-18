@@ -1,0 +1,34 @@
+@model ViewModelToView.Models.IndexUsersView;
+@{
+    ViewData["Title"] = @Model.TitlePage;
+}
+
+<div class="text-left">
+    <h1>@ViewData["Title"]</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem molestiae quidem distinctio eaque
+        officiis veritatis cupiditate omnis quae quisquam, explicabo nemo. Iure, dolorem ipsum laboriosam porro
+        necessitatibus mollitia in optio.</p>
+</div>
+
+<div class="col-6 m-auto">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (User user in @Model.Users!)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Name</td>
+                    <td>@user.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p class="text-center">Total @Model.Users.Count</p>
+</div>
